@@ -12,7 +12,7 @@ import cluster.unionfind.UnionFind;
 
 import static org.hamcrest.CoreMatchers.*;
 
-public class UnionFoundTest {
+public class UnionFindTest {
     
     private Character[] elts= {'a', 'b', 'c', 'd'};
     

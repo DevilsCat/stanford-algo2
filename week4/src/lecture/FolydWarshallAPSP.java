@@ -131,7 +131,6 @@ public class FolydWarshallAPSP implements Algorithm<Integer[][]> {
         
         spStack.push(toVid);
         
-        
         do {
             Optional<Integer> optVertexId = sp[fromVid][spStack.peek()];
             if (!optVertexId.isPresent()) {
@@ -146,7 +145,9 @@ public class FolydWarshallAPSP implements Algorithm<Integer[][]> {
     public static void main(String[] args) {
         try {
             CourseraParser parser = new CourseraParser("resources/folydwarshall-tiny.txt", "vertexNo", "edgeNo");
-            DirectedGraph<Integer, Integer> graph = new DirectedGraph<>(Integer.parseInt(parser.getSummary("vertexNo")));
+            DirectedGraph<Integer, Integer> graph = new DirectedGraph<>(
+                    Integer.parseInt(parser.getSummary("vertexNo")),
+                    Integer.parseInt(parser.getSummary("edgeNo")));
             
             parser.parseLines(line -> {
                 String[] tokens = line.split(" ", 3);

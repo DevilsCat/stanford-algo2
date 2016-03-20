@@ -119,7 +119,9 @@ public class BellmanFordShortestPath implements Algorithm<BellmanFordShortestPat
     public static void main(String[] args) {
         try {
             CourseraParser parser = new CourseraParser("resources/bellmanford-negtiny.txt", "vertexNo", "edgeNo");
-            DirectedGraph<Integer, Integer> graph = new DirectedGraph<>(Integer.parseInt(parser.getSummary("vertexNo")));
+            DirectedGraph<Integer, Integer> graph = new DirectedGraph<>(
+                    Integer.parseInt(parser.getSummary("vertexNo")),
+                    Integer.parseInt(parser.getSummary("edgeNo")));
             
             parser.parseLines(line -> {
                 String[] tokens = line.split(" ", 3);
@@ -140,8 +142,6 @@ public class BellmanFordShortestPath implements Algorithm<BellmanFordShortestPat
                     System.out.println(String.format("From %d to %d has shortest path: %d", start, i + 1, res[i]));
                 }
             }
-            
-            
             
             parser.close();
         } catch (IOException e) {
