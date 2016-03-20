@@ -65,7 +65,8 @@ public class BellmanFordShortestPath implements Algorithm<BellmanFordShortestPat
             }
         }
         
-        printDp(dp);  // for debug.
+        // for debug.
+        //printDp(dp);  
         
         Result res = new Result();
         res.hasNegativeCycle = checkNegativeCycle(dp);
