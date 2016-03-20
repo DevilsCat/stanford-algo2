@@ -73,6 +73,16 @@ public class DirectedGraph<V extends Comparable<V>, W extends Comparable<W>> {
         return edges;
     }
     
+    public void setVertexValue(int vid, V value) {
+    	validateVertexId(vid);
+    	vertices.get(vid).setValue(value);
+    }
+    
+    public V getVertexValue(int vid) {
+    	validateVertexId(vid);
+    	return vertices.get(vid).getValue();
+    }
+    
     public Optional<Edge<W>> getAdjEdge(int fromVid, int toVid) {
         validateVertexId(fromVid);
         validateVertexId(toVid);
